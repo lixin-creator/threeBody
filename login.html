@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三体网站</title>
+    <link rel="stylesheet" href="./login.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="box">
+            <p class="table">Login</p>
+            <br>
+            <input type="text" id="userName" placeholder="账号(admin)">
+            <input type="password" id="passWord" placeholder="密码(123456)">
+            <br>
+            <div id="app">
+                <a href="#" onclick="login()" class="go">GO</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('userName').value;
+            var password = document.getElementById('passWord').value;
+
+            // 这里假设账号和密码验证逻辑
+            if (username === 'admin' && password === '123456') {
+                window.location.href = './index.html';
+            } else {
+                alert('账号或密码错误');
+            }
+        }
+
+    </script>
+</body>
+</html>

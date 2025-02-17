@@ -1,0 +1,17 @@
+div.box {
+    display: inline-block;
+    margin-left: 650px;
+    margin-top: 300px;
+    font-size: 70px;
+    padding: 20px 0 20px 20px;
+    font-family: "楷体";
+    color: white;
+    letter-spacing: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 8px solid white;
+    cursor: pointer; /* 添加点击事件 */ 
+}
+div.box:hover{
+    color: gold;
+}

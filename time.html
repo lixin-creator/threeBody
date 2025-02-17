@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三体网站</title>
+    <link rel="stylesheet" href="./gold.css">
+    <link rel="stylesheet" href="../time_axis.css">
+    <link rel="stylesheet" href="time.css">
+    <script src="./jump.js" defer></script>
+</head>
+<body>
+    <div class="loading">
+        <svg viewbox='0 0 50 50'>
+            <circle r='25' cx='25' cy='25'></circle>
+        </svg>
+        <p>LOADING</p>
+    </div>
+    <ul class="navi">
+        <li>
+            <a href="./login.html">登陆界面</a>
+            <a href="./login.html">login</a>
+        </li>
+        <li>
+            <a href="./index.html">首页</a>
+            <a href="./index.html">index</a>
+        </li>
+        <li>
+            <a href="./author_Introduction.html">作者简介</a>
+            <a href="./author_Introduction.html">author</a>
+        </li>
+        <li>
+            <a href="./character_Introduction.html">人物介绍</a>
+            <a href="./character_Introduction.html">character</a>
+        </li>
+        <li>
+            <a href="./Synopsis_of_the_story.html">故事梗概</a>
+            <a href="./Synopsis_of_the_story.html">story</a>
+        </li>
+        <li>
+            <a href="./audio.html">音频播放</a>
+            <a href="./audio.html">audio</a>
+        </li>
+        <li>
+            <a href="./time.html" class="gold">时间轴</a>
+            <a href="./time.html">time</a>
+        </li>
+    </ul>
+    <div class="void" id="void">
+        <div class="crop">
+            <ul id="card-list" style="--count: 8;">
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <span class="model-name">2333-2687:掩体纪元</span>
+                            <span>云天明与程心在格郎日点通讯，云天明对程心说了三个童话故事作为情报。通过情报解读，人类同时启动了掩体计划
+                            </span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <img src="./gif/plane.gif" alt="">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <span class="model-name">2272-2333:广播纪元</span>
+                            <span>人类得知“万有引力”号启动了引力波广播系统，三体舰队开始撤离太阳系，大移民危机解除，广播纪元开始
+                            </span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <img src="./gif/plane5.gif" alt="">
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <span class="model-name">2270-2272:威慑后</span>
+                            <span> 罗辑把执剑者的位置移交给程心后,三体人迅速进攻地球,破坏了电波发射器,地球上的人类无法广播三体坐标毁灭三体,即无法对三体产生威慑,威慑纪元结束。
+                            </span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <img src="./gif/plane1.gif" alt="">
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <span class="model-name">2208-2270:威慑纪元</span>
+                            <span>第四位面壁者,罗辑,利用黑暗森林法则,威慑三体人:一旦入侵地球,将对宇宙公布三体星系的坐标,从而被其他文明击毁。最终成功建立了威慑纪元。</span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <img src="./gif/plane2.gif" alt="">
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <span class="model-name">2014-2208:危机纪元</span>
+                            <span>人类发现三体人的威胁,届时由联合国召开特别联大进行改元,标志着危机纪元的开始
+                            </span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <img src="./gif/plane4.gif" alt="">
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card">
+                        <a href="">
+                            <span class="model-name">2333-2687:DX3906星系黑域纪元</span>
+                            <span>程心发现云天明与艾AA刻在石头上的遗言，之后程心与关一帆进入647号小宇宙，647号宇宙的时间启动
+                            </span>
+                        </a></div>
+                </li>
+            </ul>
+            <div class="second-circle"></div>
+        </div>
+        <div class="mask"></div>
+        <div class="center-circle"></div>
+            <div id="container">
+                <div class="wrap">
+                    <div class="box">
+                        <div class="left"></div>
+                        <div class="center">
+                            <span>2014</span>
+                        </div>
+                        <div class="right"><span>危机纪元：</span>人类发现三体人的威胁,届时由联合国召开特别联大进行改元,标志着危机纪元的开始</div>
+                    </div>
+
+                    <div class="box">
+                        <div class="left">
+                            <span>威慑纪元</span>第四位面壁者,罗辑,利用黑暗森林法则,威慑三体人:一旦入侵地球,将对宇宙公布三体星系的坐标,从而被其他文明击毁。最终成功建立了威慑纪元。</div>
+                        <div class="center">
+                            <span>2208</span>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+
+                    <div class="box">
+                        <div class="left"></div>
+                        <div class="center">
+                            <span>2270</span>
+                        </div>
+                        <div class="right">
+                            <span>威慑后：</span>罗辑把执剑者的位置移交给程心后,三体人迅速进攻地球,破坏了电波发射器,地球上的人类无法广播三体坐标毁灭三体,即无法对三体产生威慑,威慑纪元结束。
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="left"><span>广播纪元：</span>人类得知“万有引力”号启动了引力波广播系统，三体舰队开始撤离太阳系，大移民危机解除，广播纪元开始</div>
+                        <div class="center">
+                            <span>2272</span>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+
+                    <div class="box">
+                        <div class="left"></div>
+                        <div class="center">
+                            <span>2333</span>
+                        </div>
+                        <div class="right"><span>掩体纪元：</span>云天明与程心在格郎日点通讯，云天明对程心说了三个童话故事作为情报。通过情报解读，人类同时启动了掩体计划</div>
+                    </div>
+
+                    <div class="box">
+                        <div class="left"><span>DX3906星系黑域纪元：</span>程心发现云天明与艾AA刻在石头上的遗言，之后程心与关一帆进入647号小宇宙，647号宇宙的时间启动
+                        </div>
+                        <div class="center">
+                            <span>2687</span>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+
+                </div>
+            </div>
+</body>
+
+</html>

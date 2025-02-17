@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-image: url(./images/city.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  width: 450px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.4)
+  );
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 20px #a29bfe;
+  border-radius: 15px;
+}
+
+.login .table {
+  font: 900 40px '';
+  text-align: center;
+  letter-spacing: 5px;
+  color: #3d3d3d;
+}
+
+.login .box {
+  overflow: hidden;
+}
+
+.login .box input {
+  width: 100%;
+  inset: 2px;
+  z-index: 10;
+  font-size: 1em;
+  margin-bottom: 20px;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  background-color: transparent;
+  border-bottom: 3px solid rgb(115, 100, 228); /* 初始为红色 */
+  font: 900 16px '';
+  transition: border-color 0.3s ease; /* 边框颜色变化过渡效果 */
+}
+
+.login .box input:focus {
+  border-bottom-color: rgb(0, 255, 0); /* 聚焦时变为绿色 */
+}
+
+.login .go {
+  text-align: center;
+  display: block;
+  height: 30px;
+  padding: 4px;
+  font: 900 20px '';
+  border-radius: 10px;
+  margin-top: 20px;
+  color: #fff;
+  letter-spacing: 3px;
+  background-image: linear-gradient(to left, red, yellow, green); /* 渐变背景色 */
+}

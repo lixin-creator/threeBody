@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  overflow: hidden;
+}
+ul{
+display: flex;
+position: absolute;
+justify-content: flex-end;
+}
+ul li{
+right: -500px;
+top: -431px;
+position: relative;
+list-style: none;
+width: 100px; 
+height: 40px;
+line-height: 40px;
+position: relative;
+transition: all 0.5s;
+transform-style: preserve-3d;/* 保持3d位置关系 */
+}
+ul li a{
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+text-align: center;
+font-size: 22px;
+font-family: "楷体";
+text-decoration: none;
+color: black;
+}
+ul li a:first-child{
+background-color: rgb(244, 222, 186) ;
+
+transform: translateZ(20px);
+}
+ul li a:last-child{
+background-color: rgb(171, 237, 171);
+transform: rotateX(90deg) translateZ(20px);
+}
+li:hover{
+transform: rotateX(-90deg);
+}
+
+
+
+/* 定义外层容器样式 */
+.shell {
+  position: relative;
+  top: -200px;
+  left: -10px;
+  /* 相对定位 */
+  width: 60vw;
+  /* 宽度占视口宽度的60% */
+  height: 40vw;
+  /* 高度占视口高度的40% */
+  max-width: 380px;
+  /* 最大宽度为380像素 */
+  max-height: 250px;
+  /* 最大高度为250像素 */
+  margin: 0;
+  /* 外边距为0 */
+  color: white;
+  /* 字体颜色为白色 */
+  perspective: 1000px;
+  /* 透视效果，观察者与z=0平面的距离 */
+  transform-origin: center;
+  /* 变形原点为中心 */
+}
+
+/* 定义内层容器样式 */
+.content {
+  display: flex;
+  /* 设置为弹性盒子布局 */
+  width: 100%;
+  /* 宽度100% */
+  height: 100%;
+  /* 高度100% */
+  transform-origin: center;
+  /* 变形原点为中心 */
+  transform-style: preserve-3d;
+  /* 保持3D变换 */
+  transform: translateZ(-30vw) rotateY(0);
+  /* 变换：沿z轴平移-30vw，绕y轴旋转0度 */
+  animation: carousel 9s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  /* 动画：名称为carousel，持续时间9秒，无限循环，缓动函数为cubic-bezier(0.77, 0, 0.175, 1)，动画结束后保持最后状态 */
+}
+.content:hover{
+  animation-play-state: paused;
+}
+
+/* 定义项目样式 */
+.item {
+  position: absolute;
+  /* 绝对定位 */
+  width: 60vw;
+  /* 宽度占视口宽度的60% */
+  height: 40vw;
+  /* 高度占视口高度的40% */
+  max-width: 380px;
+  /* 最大宽度为380像素 */
+  max-height: 550px;
+  /* 最大高度为250像素 */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  /* 设置阴影 */
+  border-radius: 6px;
+  /* 边框圆角半径为6像素 */
+  background-size: cover;
+  /* 背景图片等比例缩放并覆盖整个容器 */
+  -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%, rgba(255, 255, 255, 0.3));
+  /* 创建倒影效果 */
+}
+
+/* 第一个项目样式 */
+.item:nth-child(1) {
+  background-image: url(./images/body1.webp);
+  /* 背景图片为01.jpg */
+  transform: rotateY(0) translateZ(35vw);
+  /* 变换：绕y轴旋转0度，沿z轴平移35vw */
+}
+
+/* 第二个项目样式 */
+.item:nth-child(2) {
+  background-image: url(./images/body2.jpeg);
+  /* 背景图片为02.jpg */
+  transform: rotateY(120deg) translateZ(35vw);
+  /* 变换：绕y轴旋转120度，沿z轴平移35vw */
+}
+
+/* 第三个项目样式 */
+.item:nth-child(3) {
+  background-image: url(./images/body3.webp);
+  /* 背景图片为03.jpg */
+  transform: rotateY(240deg) translateZ(35vw);
+  /* 变换：绕y轴旋转240度，沿z轴平移35vw */
+}
+/* 定义动画 */
+@keyframes carousel {
+
+  0%,
+  17.5% {
+      transform: translateZ(-35vw) rotateY(0);
+      /* 变换：沿z轴平移-35vw，绕y轴旋转0度 */
+  }
+
+  27.5%,
+  45% {
+      transform: translateZ(-35vw) rotateY(-120deg);
+      /* 变换：沿z轴平移-35vw，绕y轴旋转-120度 */
+  }
+
+  55%,
+  72.5% {
+      transform: translateZ(-35vw) rotateY(-240deg);
+      /* 变换：沿z轴平移-35vw，绕y轴旋转-240度 */
+  }
+
+  82.5%,
+  100% {
+      transform: translateZ(-35vw) rotateY(-360deg);
+      /* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
+  }
+}
+/* 定义字体 */
+@font-face {
+font-family: "niubi"; 
+src: url(../project3_ThreeBody/潮字社屠龙刀简繁-闪\ 挥洒\(CHAO-TulongGBT-Flash\ Super\).ttf); 
+}
+.content p{
+display: inline-block;
+width: 50px;
+height: 400px;
+color: white;
+font-size: 50px;
+position: relative;
+left: 160px;
+top: 110px;
+line-height: 70px;
+font-family: "niubi";
+}
+div:hover .content p{
+display: none;
+}
+.item:nth-child(1):hover::after {
+content: "叶文洁，一位天文学家，历经艰难被卷入军方秘密计划“红岸工程”。在三颗太阳的影响下，四光年外的“三体文明”不断毁灭与重生，迫于危机他们决定逃离母星。同时，地球向他们发出信息，叶文洁绝望之下向三体人暴露了地球的位置，彻底改变了人类的命运。随着三体舰队的到来，人类面临末日。";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+font-family: "楷体";
+color: white;
+text-align: center;
+}
+.item:nth-child(2):hover::after {
+content: "三体人利用科技锁死了地球科学，率领庞大舰队来消灭地球文明。人类组建太空舰队，利用三体人的思维缺陷实施“面壁计划”，选出精英对抗三体人。章北海通过陨石雨抢夺战舰成功逃离，而罗辑揭示了宇宙中的黑暗森林法则，并以此威胁制止三体入侵，维持脆弱的战略平衡。";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+font-family: "楷体";
+color: white;
+text-align: center;
+}
+.item:nth-child(3):hover::after {
+content: "云天明患绝症，为暗恋的程心购买星星。程心参与向三体舰队发射探测器，请求云天明放弃安乐死并捐献大脑给阶梯计划。人类面对三体文明的战争，揭示宇宙黑暗真相，地球文明因黑暗森林威胁而隐匿。一艘无道德的战舰被地球文明诱导返航，并接受道德审判。";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+font-family: "楷体";
+color: white;
+text-align: center;
+}

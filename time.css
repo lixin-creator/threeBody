@@ -1,0 +1,353 @@
+/* 定义全局变量 */
+:root {
+    --rotate-speed: 40;
+    --count: 8;
+    --easing: cubic-bezier(0.000, 0.37, 1.000, 0.63);
+    /* 贝塞尔曲线参数，两点坐标 */
+}
+
+/* 设置页面样式 */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to top, #a18cd177 0%, #fbc2eb77 100%);
+}
+
+
+
+.navi {
+    display: flex;
+    position: absolute;
+    z-index: 99999999;
+    justify-content: flex-end;
+}
+
+.navi li {
+    list-style: none;
+    position: relative;
+    left: 500px;
+    bottom: 430px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(244, 222, 186);
+    position: relative;
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+}
+
+.navi li a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-family: "楷体";
+    text-decoration: none;
+    color: black;
+}
+
+.navi li a:first-child {
+    background-color: rgb(244, 222, 186);
+    transform: translateZ(20px);
+}
+
+.navi li a:last-child {
+    background-color: rgb(171, 237, 171);
+    transform: rotateX(90deg) translateZ(20px);
+}
+
+.navi li:hover {
+    transform: rotateX(-90deg);
+}
+
+
+
+
+
+
+
+/* 设置容器样式 */
+.void {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    position: absolute;
+    left: 200px;
+    aspect-ratio: 1 / 1;
+    /* 宽高比为正方形 */
+}
+
+/* 鼠标悬停时暂停动画 */
+.void ul:hover * {
+    animation-play-state: paused;
+}
+
+/* 设置列表样式 */
+.void ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+}
+
+/* 设置列表项样式 */
+.void li {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    animation: rotateCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+    /* 动画名 持续时间 缓动 循环 */
+}
+
+/* 设置卡片样式 */
+.card {
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 8px;
+    /* 子元素间距8px */
+    background: #FFFFFF;
+    box-shadow: 0px 16px 32px rgba(165, 135, 255, 0.1);
+    border-radius: 12px;
+    font: 500 18px '楷体';
+    color: #535062;
+    animation: rotateCCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+}
+
+/* 设置图片样式 */
+.card img {
+    width: 100%;
+}
+
+/* 设置链接样式 */
+.void a {
+    text-decoration: none;
+    color: unset;
+    /* 继承父级/回到默认 */
+    display: block;
+    height: 80px;
+    overflow: hidden;
+}
+
+/* 设置模型名称样式 */
+.model-name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #3B2ED0;
+    display: block;
+    letter-spacing: 3px;
+    color: #6844f7;
+}
+
+/* 设置不同列表项的动画延迟 */
+#card-list li:nth-child(2),
+#card-list li:nth-child(2) .card {
+    animation-delay: calc((var(--rotate-speed)/var(--count)) * -1s);
+}
+
+#card-list li:nth-child(3),
+#card-list li:nth-child(3) .card {
+    animation-delay: calc((var(--rotate-speed)/var(--count)) * -2s);
+}
+
+#card-list li:nth-child(4),
+#card-list li:nth-child(4) .card {
+    animation-delay: calc((var(--rotate-speed)/var(--count)) * -3s);
+}
+
+#card-list li:nth-child(5),
+li:nth-child(5) .card {
+    animation-delay: calc((var(--rotate-speed)/var(--count)) * -4s);
+}
+
+#card-list li:nth-child(6),
+#card-list li:nth-child(6) .card {
+    animation-delay: calc((var(--rotate-speed)/var(--count)) * -5s);
+}
+
+#card-list li:nth-child(7),
+#card-list li:nth-child(7) .card {
+    animation-delay: calc((var(--rotate-speed)/var(--count)) * -6s);
+}
+
+#card-list li:nth-child(8),
+#card-list li:nth-child(8) .card {
+    animation-delay: calc((var(--rotate-speed)/var(--count)) * -7s);
+}
+
+/* 定义顺时针旋转动画 */
+@keyframes rotateCW {
+    from {
+        transform: translate3d(0px, -50%, -1px) rotate(-45deg);
+    }
+
+    to {
+        transform: translate3d(0px, -50%, 0px) rotate(-315deg);
+    }
+}
+
+/* 定义逆时针旋转动画 */
+@keyframes rotateCCW {
+    from {
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(315deg);
+    }
+}
+
+/* 设置中心圆样式 */
+.center-circle {
+    position: absolute;
+    width: 230px;
+    aspect-ratio: 1 / 1;
+    left: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 居中对齐 */
+    background: #FFFFFF;
+    background-color: #e7aae0;
+    box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+        0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+    border-radius: 50%;
+    background-size: cover;
+}
+
+/* 设置第二个圆样式 */
+.second-circle {
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 居中对齐 */
+    background: #F5F4FE;
+    opacity: 0.5;
+    box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+        0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+    border-radius: 50%;
+}
+
+
+/* 设置裁剪样式 */
+.crop {
+    position: relative;
+    top: 0;
+    right: 500px;
+    mask-image: none;
+    -webkit-mask-image: linear-gradient(90deg, 
+    /* 从左到右 */
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0) 50%, 
+            rgba(0, 0, 0, 1) 50%, 
+            rgba(0, 0, 0, 1));
+}
+
+/* 设置遮罩样式 */
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 52%;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(100% 50% at 100% 50%,
+            rgba(60, 26, 229, 0.25) 0%,
+            rgba(59, 26, 229, 0.241896) 20%,
+            rgba(53, 26, 229, 0.1872) 40%,
+            rgba(41, 23, 240, 0.104) 60%,
+            rgba(34, 26, 229, 0.0184296) 90%,
+            rgba(32, 26, 229, 0) 100%);
+}
+
+/* 设置遮罩样式后的效果 */
+.mask:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    right: 0;
+    display: block;
+    background-image: linear-gradient(180deg, rgba(60, 26, 229, 0) 0%,
+            #3C1AE5 50%, rgba(60, 26, 229, 0) 100%);
+}
+.loading {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* 设置合适的背景色 */
+    display: none;
+    /* 初始隐藏加载动画 */
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease;
+    /*ease:慢快慢效果*/
+    z-index: 9999;
+    /* 确保在最顶层显示 */
+}
+
+.loading svg {
+    width: 5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    top: 20px;
+    left: 15px;
+    overflow: visible;
+    transition: 0.3s ease;
+}
+
+.loading svg circle {
+    fill: none;
+    stroke: #171717;
+    stroke-width: 12;
+    stroke-dasharray: 160;
+    /*虚线长度*/
+    transform-origin: center;
+    animation: circle_rotate 1.5s ease-in infinite;
+}
+
+@keyframes circle_rotate {
+    0% {
+        transform: rotate(0deg);
+        stroke-dashoffset: 160;
+        /*虚线偏移量*/
+    }
+
+    100% {
+        transform: rotate(360deg);
+        stroke-dashoffset: -160;
+        /*虚线偏移量*/
+    }
+}
+
+
+.loading p {
+    font-family: sans-serif;
+    position: relative;
+    top: 60px;
+    left: 10px;
+    font-size: 2rem;
+    color: #171717;
+    font-weight: 900;
+    transition: 0.3s ease;
+}

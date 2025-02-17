@@ -1,0 +1,11 @@
+
+.scrollbox {
+  will-change: transform; /* 告知浏览器这里会使用 transform 属性 */
+
+  transition: 0.15s ease;
+}
+
+.viewbox {
+  position: fixed;
+
+}

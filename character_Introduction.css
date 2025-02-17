@@ -1,0 +1,104 @@
+body {
+    height: 100vh;
+    /* 占浏览器视图百分之百 */
+    background-image: url(./images/city1.png);
+    background-size: cover;
+    /* contain盒子会出现空白 */
+    background-attachment: fixed;
+    /* 图片不不滚动 */
+    background-repeat: no-repeat;
+}
+
+.wrap {
+    width: 100%;
+    height: 1200px;
+    margin-top: 1000px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to bottom, rgb(81, 81, 233), rgb(249, 171, 184));
+    justify-content: space-between;
+}
+
+.wrap div {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    margin: 50px;
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.5);
+}
+
+.wrap div>img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.5s;
+    object-fit: cover;
+    /* 使图片等比例缩放填充盒子 */
+}
+
+.wrap>div>p {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-family: "楷体";
+    position: relative;
+    top: -100px;
+}
+
+.wrap>div:hover>img {
+    opacity: 0;
+}
+
+.wrap>div>div {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 2.5s;
+}
+
+.wrap div div p.p {
+    font-size: 35px;
+    font-family: "楷体";
+    margin-top: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+}
+
+.wrap div div p.q {
+    font-size: 25px;
+    font-family: "楷体";
+}
+
+.wrap div:hover>div {
+    opacity: 1;
+}
+
+.wrap>div>div img {
+    width: 120px;
+    height: 120px;
+    margin-left: 100px;
+    margin-top: 20px;
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: all 100s;
+}
+
+.wrap>div>div:hover img {
+    transform: rotate(3600deg);
+}
+
+/* 横线 */
+.wrap>div>div::before {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 30px;
+    width: 230px;
+    height: 3px;
+    background-color: black;
+}

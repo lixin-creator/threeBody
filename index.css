@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "niubi";
+  src: url(../project3_ThreeBody//锐字潮牌雷霆简-闪\ 超级黑\(REEJI-ThunderGB-Flash\ Super\).ttf);
+}
+
+ul {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: flex-end;
+}
+
+ul li {
+  list-style: none;
+  z-index: 99999;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+  /* 保持3d位置关系 */
+}
+
+ul li a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 22px;
+  font-family: "楷体";
+  text-decoration: none;
+  color: black;
+}
+
+ul li a:first-child {
+  background-color: rgb(244, 222, 186);
+
+  transform: translateZ(20px);
+}
+
+ul li a:last-child {
+  background-color: rgb(171, 237, 171);
+  transform: rotateX(90deg) translateZ(20px);
+}
+
+li:hover {
+  transform: rotateX(-90deg);
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.box .three {
+  position: absolute;
+  left: 30px;
+  bottom: -230px;
+  font-size: 140px;
+  font-family: "niubi";
+  color: rgb(183, 170, 98)
+}
+
+.box .body {
+  position: absolute;
+  bottom: -370px;
+  left: 180px;
+  font-family: "niubi";
+  font-size: 180px;
+  color: rgb(247, 212, 13);
+}

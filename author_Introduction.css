@@ -1,0 +1,63 @@
+body{
+  height: 1000px;
+  background-image: url(./images/bg.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.wrap{
+    display: flex;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    margin-top: 550px;
+    justify-content: space-between;
+    height: 900px;
+    background-color: white;
+}
+.wrap div{
+    width: 30%;
+    height: 500px;
+    color: black;
+    padding-top: 100px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 4em;
+    background-color: white;
+}
+.wrap .two{
+    margin-top: 100px;
+    border-radius: 50%;
+    background-image: url(./images/author2.jpeg);
+    background-size: contain;
+    transition: all 2s;
+}
+.three p{
+   line-height: 2em;
+}
+.three p:hover{
+    font-weight: 700;
+}
+@font-face {
+  font-family: "heiti"; 
+  src: url(../project3_ThreeBody/锐字潮牌雷霆简-闪\ 超级黑\(REEJI-ThunderGB-Flash\ Super\).ttf); 
+  }
+.four{
+    width: 100%;
+    height: 400px;
+    background-image: linear-gradient(
+      to bottom, rgb(109, 103, 103),rgb(75, 239, 75)
+      );
+    ;
+    font-size: 65px;
+    font-family: "heiti";
+    text-align: center;
+    line-height: 400px;
+    transition: color 3s;
+}
+.four:hover{
+  color: rgb(164, 255, 29);
+}
+html {
+  scroll-behavior: smooth;
+}
